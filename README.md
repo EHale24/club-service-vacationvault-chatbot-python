@@ -1,5 +1,6 @@
 # 🌴 Club Service Admin – VacationVault Chatbot (Python Version)
 
+![Deployed to AWS](https://img.shields.io/badge/Deployed-AWS-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 ![Made with Flask](https://img.shields.io/badge/Made%20with-Flask-000?logo=flask&logoColor=white&style=for-the-badge)
 ![Formspree Enabled](https://img.shields.io/badge/Formspree-Enabled-brightgreen?logo=formspree&logoColor=white&style=for-the-badge)
 ![Deployed to GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-blueviolet?logo=github&logoColor=white&style=for-the-badge)
