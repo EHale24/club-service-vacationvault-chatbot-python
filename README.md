@@ -1,5 +1,12 @@
 # 🌴 Club Service Admin – VacationVault Chatbot (Python Version)
 
+![Made with Flask](https://img.shields.io/badge/Made%20with-Flask-000?logo=flask&logoColor=white&style=for-the-badge)
+![Formspree Enabled](https://img.shields.io/badge/Formspree-Enabled-brightgreen?logo=formspree&logoColor=white&style=for-the-badge)
+![Deployed to GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-blueviolet?logo=github&logoColor=white&style=for-the-badge)
+
+
+
+
 Welcome to the **VacationVault Club Chatbot**, a fun and tropical-themed web chatbot built using Python and Flask. This interactive bot helps guide users through common requests like booking trips, joining membership plans, or reaching out to a concierge—all while staying chill with a relaxing island vibe. 🏖️
 
 ![Chatbot Preview](https://vacationvault-chat.s3.amazonaws.com/vacation_header.png)
