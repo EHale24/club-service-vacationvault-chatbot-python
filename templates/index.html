@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Service Admin</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="chat-container" id="chatbox">
+    <div class="chat-header">
+     <img src="/static/vacation_header.png" alt="Vacation Vault Club Logo" class="header-banner">
+   </div>
+
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-buttons">
+      <button onclick="sendQuick('Membership')">Membership</button>
+      <button onclick="sendQuick('Contact')">Contact</button>
+      <button onclick="sendQuick('About')">About</button>
+      <button onclick="sendQuick('Refund')">Refund</button>
+      <button onclick="sendQuick('Terms')">Terms</button>
+      <button onclick="sendQuick('Privacy')">Privacy</button>
+      <button onclick="sendQuick('Book a trip')">Booking</button>
+
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type here..." onkeypress="handleKey(event)" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function appendMsg(from, text) {
+      const chat = document.getElementById("chat-body");
+      const bubble = document.createElement("div");
+      bubble.className = from;
+      bubble.innerHTML = text;
+      chat.appendChild(bubble);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function sendQuick(text) {
+      document.getElementById("user-input").value = text;
+      sendMessage();
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const message = input.value;
+      if (!message) return;
+      appendMsg("user", message);
+      input.value = "";
+      fetch("/chat", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ message })
+      })
+      .then(res => res.json())
+      .then(data => appendMsg("bot", data.reply));
+    }
+
+    function handleKey(e) {
+      if (e.key === "Enter") sendMessage();
+    }
+
+    // Greet on load
+    window.onload = () => {
+      appendMsg("bot", "🌴 Aloha! I'm your Club Service Admin. How can I help you today?");
+    };
+  </script>
+</body>
+</html>
